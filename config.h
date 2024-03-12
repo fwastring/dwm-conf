@@ -73,6 +73,7 @@ static const char *termcmd[]  = { "kitty", "--title", "Kitty" };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *thunderbirdcmd[] = { "thunderbird", NULL };
 static const char *feishincmd[] = { "feishin", NULL };
+static const char *flameshotcmd[] = { "flameshot", "gui" };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -91,6 +92,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      quit,     {0} },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,     {.v = flameshotcmd } },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
