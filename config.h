@@ -39,7 +39,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static char *tags[] = {"", "", "", "", "", "6", "7", "8", "9"};
+static char *tags[] = {"", "", "", "", "", "", "7", "8", "9"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -86,6 +86,7 @@ static const char *termcmd[]  = { "kitty", "--title", "Kitty" };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *aerccmd[] = { "kitty", "-e", "aerc" };
 static const char *bitwardencmd[] = { "rofi-rbw" };
+static const char *bluetoothcmd[] = { "bluetoothctl", "connect", "00:6A:8E:11:00:0F" };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -93,6 +94,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_q,      spawn,          {.v = browsercmd } },
 	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,     {.v = bluetoothcmd} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
