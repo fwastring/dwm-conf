@@ -24,6 +24,7 @@ static const char red[]         = "#F28FAD";
 static const char orange[]      = "#F8BD96";
 static const char yellow[]      = "#FAE3B0";
 static const char pink[]        = "#d5aeea";
+static const char peach[]		= "#f5a97f";
 static const char col_borderbar[]  = "#1E1D2D"; // inner border
 static const char white[] = "#f8f8f2";
 // static const char col_gray1[]       = "#222222";
@@ -34,7 +35,7 @@ static const char white[] = "#f8f8f2";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { gray3, black, gray2 },
-	[SchemeSel]  = { gray4, blue,  blue  },
+	[SchemeSel]  = { gray4, peach,  peach  },
 };
 
 /* tagging */
