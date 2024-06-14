@@ -15,6 +15,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "FiraCode Nerd Font Mono:size=12" };
 static const char dmenufont[]       = "FiraCode Nerd Font Mono:size=12";
 static const char black[]       = "#1E1D2D";
+static const char base[] 		= "#24273a";
+static const char text[] 		= "#cad3f5";
 static const char gray2[]       = "#282737"; // unfocused window border
 static const char gray3[]       = "#585767";
 static const char gray4[]       = "#282737";
@@ -24,6 +26,7 @@ static const char red[]         = "#F28FAD";
 static const char orange[]      = "#F8BD96";
 static const char yellow[]      = "#FAE3B0";
 static const char pink[]        = "#d5aeea";
+static const char peach[]		= "#f5a97f";
 static const char col_borderbar[]  = "#1E1D2D"; // inner border
 static const char white[] = "#f8f8f2";
 // static const char col_gray1[]       = "#222222";
@@ -33,13 +36,13 @@ static const char white[] = "#f8f8f2";
 // static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { gray3, black, gray2 },
-	[SchemeSel]  = { gray4, blue,  blue  },
+	[SchemeNorm] = { text, base, base },
+	[SchemeSel]  = { base, peach,  peach  },
 };
 
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static char *tags[] = {"", "", "3", "4", "5", "6", "7", "8", "9"};
+static char *tags[] = {"", "", "", "", "", "", "7", "8", "9"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -86,6 +89,7 @@ static const char *termcmd[]  = { "kitty", "--title", "Kitty" };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *aerccmd[] = { "kitty", "-e", "aerc" };
 static const char *bitwardencmd[] = { "rofi-rbw" };
+static const char *bluetoothcmd[] = { "bluetoothctl", "connect", "00:6A:8E:11:00:0F" };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -93,6 +97,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_q,      spawn,          {.v = browsercmd } },
 	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,     {.v = bluetoothcmd} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
