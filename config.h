@@ -37,7 +37,7 @@ static const char white[] = "#f8f8f2";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { text, base, base },
-	[SchemeSel]  = { text, peach,  peach  },
+	[SchemeSel]  = { base, peach,  peach  },
 };
 
 /* tagging */
