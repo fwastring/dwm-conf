@@ -881,7 +881,7 @@ dirtomon(int dir)
 void
 drawbar(Monitor *m)
 {
-	int x, w, tw = 0 = 0;
+	int x, w, tw = 0;
 	unsigned int i, occ = 0, urg = 0, n = 0;
 	Client *c;
 
