@@ -88,7 +88,7 @@ static const char *browsercmd[]  = { "firefox", NULL };
 static const char *aerccmd[] = { "kitty", "-e", "aerc" };
 static const char *bitwardencmd[] = { "rofi-rbw" };
 static const char *bluetoothcmd[] = { "bluetoothctl", "connect", "00:6A:8E:11:00:0F" };
-static const char *lockcmd[] = { "betterlockscreen", "-l" };
+static const char *lockcmd[] = { "kitty", "-e", "betterlockscreen", "-l" };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
