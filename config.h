@@ -52,7 +52,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ NULL,      NULL,     "Kitty",           0,         0,          1,           0,        -1 },
+	{ NULL,      NULL,     "Alacritty",           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
@@ -83,7 +83,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", peach, "-sf", base, NULL };
-static const char *termcmd[]  = { "kitty", "--title", "Kitty" };
+static const char *termcmd[]  = { "alacritty", "--title", "Alacritty" };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *aerccmd[] = { "kitty", "-e", "aerc" };
 static const char *bitwardencmd[] = { "rofi-rbw" };
