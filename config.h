@@ -94,6 +94,7 @@ static const char *lockcmd[] = { "kitty", "-e", "betterlockscreen", "-l" };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = passcmd } },
 	{ MODKEY,                       XK_q,      spawn,          {.v = browsercmd } },
 	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
