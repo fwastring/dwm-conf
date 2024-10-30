@@ -83,34 +83,27 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", peach, "-sf", base, NULL };
-static const char *passcmd[] = { "passmenu", "-p", "pass", "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", peach, "-sf", base};
 static const char *termcmd[]  = { "alacritty", "--title", "Alacritty" };
 static const char *browsercmd[]  = { "firefox", NULL };
-static const char *aerccmd[] = { "kitty", "-e", "aerc" };
-static const char *bitwardencmd[] = { "rofi-rbw" };
-static const char *bluetoothcmd[] = { "bluetoothctl", "connect", "00:6A:8E:11:00:0F" };
-static const char *lockcmd[] = { "kitty", "-e", "betterlockscreen", "-l" };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = passcmd } },
 	{ MODKEY,                       XK_q,      spawn,          {.v = browsercmd } },
 	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY|ShiftMask,             XK_b,      spawn,     {.v = bluetoothcmd} },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,      SHCMD("blueman-manager")},
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,     SHCMD("pavucontrol")},
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      quit,     {0} },
-	{ MODKEY|ShiftMask,             XK_m,      spawn,     {.v = aerccmd} },
-	{ MODKEY|ShiftMask,             XK_d,      spawn,     {.v = bitwardencmd} },
-	{ MODKEY|ShiftMask,             XK_x,      spawn,     {.v = lockcmd} },
+	{ MODKEY|ShiftMask,             XK_x,      spawn,    SHCMD("betterlockscreen -l")},
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
