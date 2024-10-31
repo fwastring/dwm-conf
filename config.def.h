@@ -85,6 +85,11 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", peach, "-sf", base, NULL };
 static const char *termcmd[]  = { "alacritty", "--title", "Alacritty" };
 static const char *browsercmd[]  = { "firefox", NULL };
+static const char *inclight[]  = { "brightnessctl", "set", "+10%" };
+static const char *declight[]  = { "brightnessctl", "set", "-10%" };
+static const char *muteaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "0%" };
+static const char *incaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%" };
+static const char *deceaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%" };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -99,11 +104,11 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_i,      spawn,     SHCMD("slack")},
 	{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,     SHCMD("pavucontrol")},
-	{ MODKEY,             			XK_XF86AudioMute,   spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ 0%")},
-	{ MODKEY,             			XK_XF86AudioRaiseVolume,   spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +10%")},
-	{ MODKEY,             			XK_XF86AudioLowerVolume,   spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -10%")},
-	{ MODKEY,             			XK_XF86BrightnessUp,   spawn,     SHCMD("brightnessctl set 10%+")},
-	{ MODKEY,             			XK_XF86BrightnessDown,   spawn,     SHCMD("brightnessctl set 10%-")},
+	{ MODKEY,             			XF86XK_AudioMute,   spawn,     { .v = muteaudio}},
+	{ MODKEY,             			XF86XK_AudioRaiseVolume,   spawn,     { .v = incaudio}},
+	{ MODKEY,             			XF86XK_AudioLowerVolume,   spawn,     { .v = decaudio}},
+	{ MODKEY,             			XF86XK_MonBrightnessUp,   spawn,     { .v = inclight}},
+	{ MODKEY,             			XF86XK_MonBrightnessDown,   spawn,     { .v = declight}},
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,                       XK_Return, zoom,           {0} },
