@@ -89,7 +89,7 @@ static const char *inclight[]  = { "brightnessctl", "set", "+10%" };
 static const char *declight[]  = { "brightnessctl", "set", "-10%" };
 static const char *muteaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "0%" };
 static const char *incaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%" };
-static const char *deceaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%" };
+static const char *decaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%" };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
