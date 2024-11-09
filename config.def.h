@@ -83,7 +83,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", peach, "-sf", base, NULL };
-static const char *termcmd[]  = { "alacritty", "--title", "Alacritty" };
+static const char *termcmd[]  = { "kitty", "--title", "Alacritty" };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *inclight[]  = { "brightnessctl", "set", "+10%" };
 static const char *declight[]  = { "brightnessctl", "set", "-10%" };
@@ -118,7 +118,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_m,      spawn,     SHCMD("alacritty -e termusic")},
+	{ MODKEY|ShiftMask,             XK_m,      spawn,     SHCMD("kitty -e termusic")},
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
