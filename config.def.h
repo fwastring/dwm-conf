@@ -100,6 +100,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      spawn,      SHCMD("blueman-manager")},
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_k,      spawn,     SHCMD("speedcrunch")},
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_i,      spawn,     SHCMD("slack")},
 	{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },
