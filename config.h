@@ -82,7 +82,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "~/.config/rofi/launchers/type-3/launcher.sh"};
+static const char *dmenucmd[] = { "sh", "/home/fw/.config/rofi/launchers/type-3/launcher.sh"};
 static const char *launchcmd[] = { "rofi", "-show", "run"};
 static const char *sshcmd[] = { "rofi", "-show", "ssh"};
 static const char *termcmd[]  = { "kitty", "--title", "Alacritty" };
