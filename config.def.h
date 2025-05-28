@@ -117,7 +117,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      quit,     {0} },
-	{ MODKEY|ShiftMask,             XK_x,      spawn,    SHCMD("betterlockscreen -l")},
+	{ MODKEY|ShiftMask,             XK_x,      spawn,    SHCMD("slock")},
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
