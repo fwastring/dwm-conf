@@ -12,8 +12,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 0;        /* 0 means no systray */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "ComicShannsMono Nerd Font:size=12" };
-static const char dmenufont[]       = "ComicShannsMono Nerd Font:size=12";
+static const char *fonts[]          = { "FiraCode Nerd Font Mono:size=12" };
+static const char dmenufont[]       = "FiraCode Nerd Font Mono:size=12";
 static const char black[]       = "#1E1D2D";
 static const char base[] 		= "#24273a";
 static const char text[] 		= "#cad3f5";
