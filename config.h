@@ -12,8 +12,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 0;        /* 0 means no systray */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "FiraCode Nerd Font Mono:size=12" };
-static const char dmenufont[]       = "FiraCode Nerd Font Mono:size=12";
+static const char *fonts[]          = { "ComicShannsMono Nerd Font Mono:size=12" };
+static const char dmenufont[]       = "ComicShannsMono Nerd Font Mono:size=12";
 static const char black[]       = "#1E1D2D";
 static const char base[] 		= "#24273a";
 static const char text[] 		= "#cad3f5";
@@ -82,10 +82,13 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "sh", "/home/fw/.config/rofi/launchers/type-3/launcher.sh"};
+// static const char *dmenucmd[] = { "sh", "/home/fw/.config/rofi/launchers/type-3/launcher.sh"};
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", peach, "-sf", base, NULL };
 static const char *launchcmd[] = { "rofi", "-show", "run"};
 static const char *sshcmd[] = { "rofi", "-show", "ssh"};
-static const char *termcmd[]  = { "kitty", "--title", "Alacritty" };
+// static const char *termcmd[]  = { "kitty", "--title", "Alacritty" };
+static const char *termcmd[]  = { "kitty" };
+static const char *syscmd[]  = { "sh", "/home/fw/scripts/dmenu_sys" };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *inclight[]  = { "brightnessctl", "set", "+10%" };
 static const char *declight[]  = { "brightnessctl", "set", "-10%" };
