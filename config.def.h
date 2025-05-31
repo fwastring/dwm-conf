@@ -16,7 +16,7 @@ static const char *fonts[]          = { "ComicShannsMono Nerd Font Mono:size=12"
 static const char dmenufont[]       = "ComicShannsMono Nerd Font Mono:size=12";
 static const char black[]       = "#1e1d2d"; // Matches your original black
 static const char base[]        = "#eff1f5"; // Latte Base
-static const char textCol[]        = "#4c4f69"; // Latte Text
+static const char text[]        = "#4c4f69"; // Latte Text
 static const char gray2[]       = "#6c6f85"; // Using Latte Subtext0 for a lighter gray
 static const char gray3[]       = "#8c8fa1"; // Using Latte Overlay1 for a medium gray
 static const char gray4[]       = "#acb0be"; // Using Latte Surface2 for a lighter gray
@@ -37,7 +37,7 @@ static const char white[] = "#f8f8f2";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { text, base, base },
-	[SchemeSel]  = { base, peach,  peach  },
+	[SchemeSel]  = { base, orange,  orange  },
 };
 
 /* tagging */
@@ -83,7 +83,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 // static const char *dmenucmd[] = { "sh", "/home/fw/.config/rofi/launchers/type-3/launcher.sh"};
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", peach, "-sf", base, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", text, "-nf", base, "-sb", orange, "-sf", base, NULL };
 static const char *launchcmd[] = { "rofi", "-show", "run"};
 static const char *sshcmd[] = { "rofi", "-show", "ssh"};
 // static const char *termcmd[]  = { "kitty", "--title", "Alacritty" };

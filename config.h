@@ -37,7 +37,7 @@ static const char white[] = "#f8f8f2";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { text, base, base },
-	[SchemeSel]  = { base, peach,  peach  },
+	[SchemeSel]  = { base, orange,  orange  },
 };
 
 /* tagging */
@@ -83,7 +83,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 // static const char *dmenucmd[] = { "sh", "/home/fw/.config/rofi/launchers/type-3/launcher.sh"};
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", peach, "-sf", base, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", text, "-nf", base, "-sb", orange, "-sf", base, NULL };
 static const char *launchcmd[] = { "rofi", "-show", "run"};
 static const char *sshcmd[] = { "rofi", "-show", "ssh"};
 // static const char *termcmd[]  = { "kitty", "--title", "Alacritty" };
