@@ -25,20 +25,7 @@ static const char text[]        = "#4c4f69"; // Latte Text
 static const char gray2[]       = "#6c6f85"; // Using Latte Subtext0 for a lighter gray
 static const char gray3[]       = "#8c8fa1"; // Using Latte Overlay1 for a medium gray
 static const char gray4[]       = "#acb0be"; // Using Latte Surface2 for a lighter gray
-static const char blue[]        = "#1e66f5"; // Latte Blue
-static const char green[]       = "#40a02b"; // Latte Green
-static const char red[]         = "#d20f39"; // Latte Red
 static const char orange[]      = "#fe640b"; // Latte Peach (closest match)
-static const char yellow[]      = "#df8e1d"; // Latte Yellow
-static const char pink[]        = "#ea76cb"; // Latte Pink
-static const char peach[]       = "#fe640b"; // Latte Peach
-static const char col_borderbar[]  = "#1E1D2D"; // inner border
-static const char white[] = "#f8f8f2";
-// static const char col_gray1[]       = "#222222";
-// static const char col_gray2[]       = "#444444";
-// static const char col_gray3[]       = "#bbbbbb";
-// static const char col_gray4[]       = "#eeeeee";
-// static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { text, base, base },
@@ -88,9 +75,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 // static const char *dmenucmd[] = { "sh", "/home/fw/.config/rofi/launchers/type-3/launcher.sh"};
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", text, "-nf", base, "-sb", orange, "-sf", base, NULL };
-static const char *launchcmd[] = { "rofi", "-show", "run"};
-static const char *sshcmd[] = { "rofi", "-show", "ssh"};
+static const char *dmenucmd[] = { "dmenu_run", "-c", "-bw 3"};
+// static const char *launchcmd[] = { "rofi", "-show", "run"};
+// static const char *sshcmd[] = { "rofi", "-show", "ssh"};
 // static const char *termcmd[]  = { "kitty", "--title", "Alacritty" };
 static const char *termcmd[]  = { "st" };
 static const char *syscmd[]  = { "sh", "/home/fw/scripts/dmenu_sys" };
@@ -104,6 +91,7 @@ static const char *decaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@",
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = syscmd } },
 	{ MODKEY,                       XK_q,      spawn,          {.v = browsercmd } },
 	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
