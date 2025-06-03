@@ -90,7 +90,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = syscmd } },
 	{ MODKEY,                       XK_q,      spawn,          {.v = browsercmd } },
-	{ MODKEY,                       XK_v,      spawn,          {.v = clipmenu } },
+	{ MODKEY,                       XK_v,      spawn,          SHCMD("clipmenu -c -bw 3 -l 4")},
 	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,      SHCMD("blueman-manager")},
