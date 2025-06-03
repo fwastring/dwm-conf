@@ -80,6 +80,7 @@ static const char *syscmd[]  = { "sh", "/home/fw/scripts/dmenu_sys" };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *inclight[]  = { "brightnessctl", "set", "+10%" };
 static const char *declight[]  = { "brightnessctl", "set", "-10%" };
+static const char *clipmenu[]  = { "clipmenu", "-c", "-bw", "3", "-l", "4" };
 static const char *muteaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "0%" };
 static const char *incaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%" };
 static const char *decaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%" };
@@ -89,6 +90,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = syscmd } },
 	{ MODKEY,                       XK_q,      spawn,          {.v = browsercmd } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = clipmenu } },
 	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,      SHCMD("blueman-manager")},
