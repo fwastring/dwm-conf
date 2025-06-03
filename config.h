@@ -27,10 +27,10 @@ static const char dmenufont[]       = "ComicShannsMono Nerd Font Mono:size=12";
 // static const char gray3[]       = "#8c8fa1"; // Using Latte Overlay1 for a medium gray
 // static const char gray4[]       = "#acb0be"; // Using Latte Surface2 for a lighter gray
 // static const char orange[]      = "#fe640b"; // Latte Peach (closest match)
-static const char *colors[][2] = {
+static const char *colors[][3] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#4c4f69", "#eff1f5" },
-	[SchemeSel] = { "#eff1f5", "#04a5e5" },
+	[SchemeNorm] = { "#4c4f69", "#eff1f5", "#eff1f5" },
+	[SchemeSel] = { "#eff1f5", "#04a5e5", "#04a5e5" },
 };
 
 
