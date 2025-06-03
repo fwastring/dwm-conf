@@ -17,20 +17,22 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 0;        /* 0 means no systray */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int user_bh            = 15;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "ComicShannsMono Nerd Font Mono:size=12" };
 static const char dmenufont[]       = "ComicShannsMono Nerd Font Mono:size=12";
-static const char black[]       = "#1e1d2d"; // Matches your original black
-static const char base[]        = "#eff1f5"; // Latte Base
-static const char text[]        = "#4c4f69"; // Latte Text
-static const char gray2[]       = "#6c6f85"; // Using Latte Subtext0 for a lighter gray
-static const char gray3[]       = "#8c8fa1"; // Using Latte Overlay1 for a medium gray
-static const char gray4[]       = "#acb0be"; // Using Latte Surface2 for a lighter gray
-static const char orange[]      = "#fe640b"; // Latte Peach (closest match)
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { text, base, base },
-	[SchemeSel]  = { base, orange,  orange  },
+// static const char black[]       = "#1e1d2d"; // Matches your original black
+// static const char base[]        = "#eff1f5"; // Latte Base
+// static const char text[]        = "#4c4f69"; // Latte Text
+// static const char gray2[]       = "#6c6f85"; // Using Latte Subtext0 for a lighter gray
+// static const char gray3[]       = "#8c8fa1"; // Using Latte Overlay1 for a medium gray
+// static const char gray4[]       = "#acb0be"; // Using Latte Surface2 for a lighter gray
+// static const char orange[]      = "#fe640b"; // Latte Peach (closest match)
+static const char *colors[][2] = {
+	/*     fg         bg       */
+	[SchemeNorm] = { "#4c4f69", "#eff1f5" },
+	[SchemeSel] = { "#eff1f5", "#04a5e5" },
 };
+
 
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
