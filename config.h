@@ -87,7 +87,8 @@ static const char *decaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@",
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	// { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run -m 0 -c -bw 3 -l 4") },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = syscmd } },
 	{ MODKEY,                       XK_q,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("clipmenu -c -bw 3 -l 4")},
