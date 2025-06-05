@@ -13,5 +13,5 @@ working_dir="$(pwd)"
 git_revision="$(git log | head -1 | awk '{print $2;}')"
 replace_pattern="      rev = \"${git_revision}\";"
 sed -i "${linenumber}s/.*/${replace_pattern}/" "${nix_folder}/shared/dwm.nix"
-home-manager switch --flake "${nix_folder}#fw@${hostname}"
+home-manager switch --flake "${nix_folder}#fw@${host_name}"
 cd "${working_dir}" || exit 0
