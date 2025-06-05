@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 nix_folder="$HOME/nix"
+host_name=$(hostname)
 
 linenumber=$(sed -n '/dwm.overrideAttrs/=' "${nix_folder}/shared/dwm.nix")
 ((linenumber+=3))
@@ -12,5 +13,5 @@ working_dir="$(pwd)"
 git_revision="$(git log | head -1 | awk '{print $2;}')"
 replace_pattern="      rev = \"${git_revision}\";"
 sed -i "${linenumber}s/.*/${replace_pattern}/" "${nix_folder}/shared/dwm.nix"
-home-manager switch --flake "${nix_folder}#fw@laptop"
+home-manager switch --flake "${nix_folder}#fw@${hostname}"
 cd "${working_dir}" || exit 0
