@@ -80,12 +80,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-i", "-c", "-bw"
 static const char *termcmd[]  = { "st" };
 static const char *syscmd[]  = { "sh", "/home/fw/scripts/dmenu_sys" };
 static const char *browsercmd[]  = { "qutebrowser", NULL };
-static const char *inclight[]  = { "brightnessctl", "set", "+10%" };
-static const char *declight[]  = { "brightnessctl", "set", "-10%" };
 static const char *clipmenu[]  = { "clipmenu", "-c", "-bw", "3", "-l", "4" };
-static const char *muteaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "0%" };
-static const char *incaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%" };
-static const char *decaudio[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%" };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -97,6 +92,7 @@ static const Key keys[] = {
 	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,      SHCMD("blueman-manager")},
+	{ MODKEY|ShiftMask,             XK_u,      spawn,      SHCMD("/home/fw/scripts/utilities")},
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_k,      spawn,     SHCMD("speedcrunch")},
@@ -104,11 +100,11 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_i,      spawn,     SHCMD("slack")},
 	{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,     SHCMD("pavucontrol")},
-	{ MODKEY,             			XF86XK_AudioMute,   spawn,     { .v = muteaudio}},
-	{ MODKEY,             			XF86XK_AudioRaiseVolume,   spawn,     { .v = incaudio}},
-	{ MODKEY,             			XF86XK_AudioLowerVolume,   spawn,     { .v = decaudio}},
-	{ MODKEY,             			XF86XK_MonBrightnessUp,   spawn,     { .v = inclight}},
-	{ MODKEY,             			XF86XK_MonBrightnessDown,   spawn,     { .v = declight}},
+	// { MODKEY,             			XF86XK_AudioMute,   spawn,     { .v = muteaudio}},
+	// { MODKEY,             			XF86XK_AudioRaiseVolume,   spawn,     { .v = incaudio}},
+	// { MODKEY,             			XF86XK_AudioLowerVolume,   spawn,     { .v = decaudio}},
+	// { MODKEY,             			XF86XK_MonBrightnessUp,   spawn,     { .v = inclight}},
+	// { MODKEY,             			XF86XK_MonBrightnessDown,   spawn,     { .v = declight}},
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,       SHCMD("bash ~/scripts/passmenu") },
