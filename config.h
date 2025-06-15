@@ -93,6 +93,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,      SHCMD("blueman-manager")},
 	{ MODKEY|ShiftMask,             XK_u,      spawn,      SHCMD("/home/fw/scripts/utilities")},
+	{ MODKEY|ShiftMask,             XK_w,      spawn,      SHCMD("/home/fw/scripts/watch")},
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_k,      spawn,     SHCMD("speedcrunch")},
